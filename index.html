@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Course Registration System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Course Registration</h1>
+    <p>Select your course and enter your details below.</p>
+  </header>
+
+  <main>
+    <section class="registration-card">
+      <h2>Student Registration Form</h2>
+      
+      <form id="registrationForm" novalidate>
+        <!-- Full Name -->
+        <div class="form-group">
+          <label for="fullName">Full Name *</label>
+          <input type="text" id="fullName" name="fullName" required placeholder="e.g., Jane Doe" aria-describedby="nameError">
+          <span class="error-message" id="nameError" role="alert"></span>
+        </div>
+
+        <!-- Student ID -->
+        <div class="form-group">
+          <label for="studentId">Student ID *</label>
+          <input type="text" id="studentId" name="studentId" required placeholder="e.g., 20261234" aria-describedby="idError">
+          <span class="error-message" id="idError" role="alert"></span>
+        </div>
+
+        <!-- Email Address -->
+        <div class="form-group">
+          <label for="email">Email Address *</label>
+          <input type="email" id="email" name="email" required placeholder="e.g., student@university.ac.zm" aria-describedby="emailError">
+          <span class="error-message" id="emailError" role="alert"></span>
+        </div>
+
+        <!-- Course Selection -->
+        <div class="form-group">
+          <label for="course">Select Course Module *</label>
+          <select id="course" name="course" required aria-describedby="courseError">
+            <option value="">-- Choose a Module --</option>
+            <option value="ICT461">ICT461 - Advanced Web & Enterprise Systems</option>
+            <option value="ICT462">ICT462 - Network Security & Infrastructure</option>
+            <option value="ICT463">ICT463 - Database Administration & Analytics</option>
+          </select>
+          <span class="error-message" id="courseError" role="alert"></span>
+        </div>
+
+        <!-- Terms & Conditions Checkbox -->
+        <div class="form-group checkbox-group">
+          <input type="checkbox" id="terms" name="terms" required aria-describedby="termsError">
+          <label for="terms">I agree to the registration rules & regulations *</label>
+          <span class="error-message" id="termsError" role="alert"></span>
+        </div>
+
+        <button type="submit" id="submitBtn">Register Course</button>
+      </form>
+
+      <!-- Success Feedback Container -->
+      <div id="successBox" class="hidden" role="status">
+        <h3>Registration Successful!</h3>
+        <p id="successDetails"></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 ICT461 Course Registration Interface</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
